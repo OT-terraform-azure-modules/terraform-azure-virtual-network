@@ -58,7 +58,7 @@ jobs:
       
       
   tfplan: 
-   name: "Terraform Plan"
+   name: "Terraform Plan "
    runs-on: self-hosted
    needs: [terraformCI, tfsec]
    
