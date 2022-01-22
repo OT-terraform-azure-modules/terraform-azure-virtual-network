@@ -13,7 +13,7 @@ provider "azurerm" {
 }
 
 module "res_group" {
-  source                  = "git::git@gitlab.com:ot-azure/terraform/rg.git"
+  source                  = "git::https://github.com/OT-terraform-azure-modules/terraform-azure-resource-group.git"
   resource_group_name     = "test-rg"
   resource_group_location = "West Europe"
   lock_level_value        = ""
