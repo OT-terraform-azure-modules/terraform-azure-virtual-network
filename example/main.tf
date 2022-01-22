@@ -21,3 +21,7 @@ module "vnet" {
     Owner = "Akansha"
   }
 }
+    
+# Good
+// Bad
+
