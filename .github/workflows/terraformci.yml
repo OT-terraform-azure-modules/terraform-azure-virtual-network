@@ -1,0 +1,55 @@
+name: 'TerraformCI'
+
+on:
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  terraformCI:
+    name: 'TerraformCI'
+    runs-on: self-hosted
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    # Checkout the repository to the GitHub Actions runner
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: "Changing Directory"
+      run: cd example/
+
+    # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
+    - name: Terraform Init
+      run: terraform init
+
+    # Checks that all Terraform configuration files adhere to a canonical format
+    - name: Terraform Format
+      run: terraform fmt 
+
+    # Validate the Terraform Code
+    - name: Terraform Validate
+      run: terraform validate 
+      
+    # Check for Linting in Terraform Code
+    - name: Terraform Linting
+      run: tflint .
+   
+  tfsec:
+    continue-on-error: false
+    name: "Terraform security scan"
+    runs-on: self-hosted
+
+    container:
+      image: aquasec/tfsec-alpine
+
+    steps:
+    
+    - name: "Changing Directory"
+      run: cd example/
+      
+    - name: "Terraform security scan"
+      run: tfsec .
