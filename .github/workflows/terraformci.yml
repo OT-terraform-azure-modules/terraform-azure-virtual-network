@@ -35,10 +35,6 @@ jobs:
     - name: Terraform Validate
       run: cd example/ && terraform validate 
       
-    # terraform plan
-    - name: Terraform Plan
-      run: terraform plan
-      
     # Check for Linting in Terraform Code
     - name: Terraform Linting
       run: cd example/ && tflint .
