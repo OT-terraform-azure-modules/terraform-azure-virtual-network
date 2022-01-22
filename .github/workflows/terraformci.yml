@@ -20,7 +20,7 @@ jobs:
       uses: actions/checkout@v2
       
     - name: "Changing Directory"
-      run: cd example/
+      run: cd example/ && ls -al
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
@@ -42,6 +42,7 @@ jobs:
     continue-on-error: false
     name: "Terraform security scan"
     runs-on: self-hosted
+    needs: terraformCI
 
     container:
       image: aquasec/tfsec-alpine
@@ -49,7 +50,7 @@ jobs:
     steps:
     
     - name: "Changing Directory"
-      run: cd example/
+      run: cd example/ && ls -al
       
     - name: "Terraform security scan"
       run: tfsec .
