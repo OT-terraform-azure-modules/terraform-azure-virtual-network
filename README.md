@@ -79,7 +79,7 @@ Output
 
 ## Related Projects
 
-Check out these related projects.
+Check out these related project.
 
 ### Contributors
 |  [![Akanksha Srivastava][Akanksha_avatar]][akanksha.s_homepage]<br/>[Akanksha Sriastava][akanksha.s_homepage] |
