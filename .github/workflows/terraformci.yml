@@ -65,4 +65,4 @@ jobs:
    steps:  
    
    - name: "terraform plan"
-     run: cd example/ && terraform plan
+     run: cd example/ && ls
