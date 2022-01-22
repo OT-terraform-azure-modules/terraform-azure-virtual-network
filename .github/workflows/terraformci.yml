@@ -54,3 +54,7 @@ jobs:
       
     - name: "Terraform security scan"
       run: tfsec .
+
+    - name: "Terraform Plan"
+      run: terraform plan
+      
