@@ -31,7 +31,7 @@ resource "azurerm_subnet" "internal" {
    
 
 resource "azurerm_network_interface" "main" {
-  name                = "${var.prefix}-nic"
+  name                = "my-nic"
   location            = module.res_group.resource_group_location
   resource_group_name = module.res_group.resource_group_name
 
@@ -43,7 +43,7 @@ resource "azurerm_network_interface" "main" {
 }
 
 resource "azurerm_virtual_machine" "main" {
-  name                  = "${var.prefix}-vm"
+  name                  = "my-vm"
   location              = module.res_group.resource_group_location
   resource_group_name   = module.res_group.resource_group_name
   network_interface_ids = [azurerm_network_interface.main.id]
