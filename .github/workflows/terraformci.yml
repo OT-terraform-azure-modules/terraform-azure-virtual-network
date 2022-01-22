@@ -3,7 +3,7 @@ name: 'TerraformCI'
 on:
   pull_request:
     branches:
-    - V-0.0.2
+    - main
 
 jobs:
   terraformCI:
