@@ -1,16 +1,3 @@
-terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = ">= 2.59.0"
-    }
-  }
-  required_version = ">= 0.13"
-}
-
-provider "azurerm" {
-  features {}
-}
 
 module "res_group" {
   source                  = "git::https://github.com/OT-terraform-azure-modules/terraform-azure-resource-group.git?ref=v0.0.1"
@@ -35,4 +22,12 @@ module "vnet" {
   }
 }
 
-
+resource "azurerm_linux_virtual_machine" "bad_linux_example" {
+  name                            = "bad-linux-machine"
+  resource_group_name             = module.res_group.resource_group_name
+  location                        = module.res_group.resource_group_location
+  size                            = "Standard_F2"
+  admin_username                  = "adminuser"
+  admin_password                  = "somePassword"
+  disable_password_authentication = false
+}
