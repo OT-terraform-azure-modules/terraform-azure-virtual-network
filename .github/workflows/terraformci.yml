@@ -56,6 +56,3 @@ jobs:
     - name: "Terraform security scan"
       run: cd example/ && tfsec .
 
-    - name: "Terraform Plan"
-      run: cd example/ && terraform plan
-      
