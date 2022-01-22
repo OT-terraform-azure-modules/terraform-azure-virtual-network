@@ -57,12 +57,3 @@ jobs:
       run: cd example/ && tfsec .
       
       
-  tfplan: 
-   name: "Terraform Plan "
-   runs-on: self-hosted
-   needs: [terraformCI, tfsec]
-   
-   steps:  
-   
-   - name: "terraform plan"
-     run: cd example/ && terraform plan
