@@ -25,15 +25,15 @@ jobs:
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
-      run: terraform init
+      run: cd example/ && terraform init
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
-      run: terraform fmt 
+      run: cd example/ && terraform fmt 
 
     # Validate the Terraform Code
     - name: Terraform Validate
-      run: terraform validate 
+      run: cd example/ && terraform validate 
       
     # terraform plan
     - name: Terraform Plan
@@ -41,7 +41,7 @@ jobs:
       
     # Check for Linting in Terraform Code
     - name: Terraform Linting
-      run: tflint .
+      run: cd example/ && tflint .
    
   tfsec:
     continue-on-error: false
@@ -58,8 +58,8 @@ jobs:
       run: cd example/ && ls -al
       
     - name: "Terraform security scan"
-      run: tfsec .
+      run: cd example/ && tfsec .
 
     - name: "Terraform Plan"
-      run: terraform plan
+      run: cd example/ && terraform plan
       
