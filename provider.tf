@@ -8,6 +8,6 @@
  # required_version = ">= 0.13"
 #}
 
-#provider "azurerm" {
-#  features {}
-#}
+provider "azurerm" {
+  features {}
+}
