@@ -4,7 +4,7 @@ on:
   push:
   pull_request:
     branches:
-    - main
+    - v-0.0.3
 
 jobs:
   terraformCI:
@@ -57,7 +57,7 @@ jobs:
       run: cd example/ && tfsec .
       
       
- tfplan: 
+  tfplan: 
    name: "Terraform Plan"
    runs-on: self-hosted
    needs: [terraformCI, tfsec]
