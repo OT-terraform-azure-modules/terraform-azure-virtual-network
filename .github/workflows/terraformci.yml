@@ -4,7 +4,7 @@ on:
   push:
   pull_request:
     branches:
-    - main
+    - v-0.0.4
 
 jobs:
   terraformCI:
