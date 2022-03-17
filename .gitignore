@@ -22,3 +22,5 @@ example/.terraform/*
 example/*.tfstate
 example/*.tfvars
 example/*terraform.*
+
+provider.tf

@@ -31,7 +31,7 @@ module "vnet" {
   # create_ddos_protection_plan = true    # Only use this variable when we want Ddos Protection enabled for our VNET. 
   dns_servers             = ["10.0.0.4", "10.0.0.5"]
   tag_map = {
-    Owner = "Akansha"
+    Owner = "Akanksha"
   }
 }
 
