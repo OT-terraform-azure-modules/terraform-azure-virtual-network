@@ -18,31 +18,6 @@ Terraform versions
 ------------------
 Terraform 1.0
 
-Usage
-------
-
-```hcl
-module "res_group" {
-  source                  = "git::https://github.com/OT-terraform-azure-modules/azure_resource_group.git"
-  resource_group_name     = "_"
-  resource_group_location = "_"
-  lock_level_value        = ""
-  tag_map = {
-    Name = "AzureResourceGroup"
-  }
-}
-
-module "vnet" {
-  source        = "git::https://github.com/OT-terraform-azure-modules/terraform-azure-virtual-network.git"
-  rg_name       = module.res_group.resource_group_name
-  vnet_location = module.res_group.resource_group_location
-  address_space = ["_"]
-  vnet_name     = ""
-  dns_servers   = ["_", "_"]
-}
-
-```
-
 Tags
 ----
 * Tags are assigned to resources with name variable as prefix.
@@ -77,9 +52,50 @@ Output
 | vnet_location | The location of the newly created Vnet |
 | vnet_address_space | The address space of the newly created Vnet |
 
+DDOS Protection
+Azure DDoS Protection Standard, combined with application design best practices, provides enhanced DDoS mitigation features to defend against DDoS attacks. It is automatically tuned to help protect your specific Azure resources in a virtual network. Protection is simple to enable on any new or existing virtual network, and it requires no application or resource changes.
+
+* [DDOS](https://docs.microsoft.com/en-us/azure/ddos-protection/ddos-protection-overview)
+
+
+# Example
+
+Enable DDOS Protection Plan:- example/with_ddos_example/main.tf
+
+Disable DDOS Protection Plan:- example/without_ddos_example/main.tf
+
+
 ## Related Projects
 
 Check out these related projects.
+---
+Azure Resource Group:- https://github.com/OT-terraform-azure-modules/terraform-azure-resource-group.git
+
+
+Usage
+------
+
+```hcl
+module "res_group" {
+  source                  = "git::https://github.com/OT-terraform-azure-modules/azure_resource_group.git"
+  resource_group_name     = "_"
+  resource_group_location = "_"
+  lock_level_value        = ""
+  tag_map = {
+    Name = "AzureResourceGroup"
+  }
+}
+
+module "vnet" {
+  source        = "git::https://github.com/OT-terraform-azure-modules/terraform-azure-virtual-network.git"
+  rg_name       = module.res_group.resource_group_name
+  vnet_location = module.res_group.resource_group_location
+  address_space = ["_"]
+  vnet_name     = ""
+  dns_servers   = ["_", "_"]
+}
+
+```
 
 ### Contributors
 |  [![Akanksha Srivastava][Akanksha_avatar]][akanksha.s_homepage]<br/>[Akanksha Sriastava][akanksha.s_homepage] |
