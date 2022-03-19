@@ -58,18 +58,11 @@ Azure DDoS Protection Standard, combined with application design best practices,
 * [DDOS](https://docs.microsoft.com/en-us/azure/ddos-protection/ddos-protection-overview)
 
 
-# Example
-
-Enable DDOS Protection Plan:- example/with_ddos_example/main.tf
-
-Disable DDOS Protection Plan:- example/without_ddos_example/main.tf
-
-
 ## Related Projects
 
 Check out these related projects.
 ---
-Azure Resource Group:- https://github.com/OT-terraform-azure-modules/terraform-azure-resource-group.git
+* [Azure Resource Group](https://github.com/OT-terraform-azure-modules/terraform-azure-resource-group.git)
 
 
 Usage
