@@ -10,6 +10,13 @@ Azure Virtual Network Terraform module
 
 Terraform module which creates Vnet on Azure.
 
+DDOS Protection
+Azure provides continuous protection against DDoS attacks. DDoS protection does not store customer data. This DDoS protection service helps to protect all Azure services, including platform as a service (PaaS) services such as Azure DNS. DDoS Protection Basic requires no user configuration or application changes.
+In a DDoS attack, a perpetrator intentionally floods the system, like a server, website, or other network resource, with fake traffic. The computers are connected in a coordinated command-and-control network, called a botnet. A malicious third party controls the botnet to launch the DDoS attack. By overwhelming the service’s capabilities, the activity triggers a denial of services to legitimate users. DDoS attacks can be targeted at any endpoint that's publicly reachable through the internet.
+
+* [DDOS](https://docs.microsoft.com/en-us/azure/ddos-protection/ddos-protection-overview)
+
+
 These types of resources are supported:
 
 * [VNET](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network)
@@ -18,10 +25,6 @@ Terraform versions
 ------------------
 Terraform 1.0
 
-Tags
-----
-* Tags are assigned to resources with name variable as prefix.
-* Additial tags can be assigned by tags variables as defined above.
 
 Resources
 ------
@@ -51,11 +54,6 @@ Output
 | vnet_name | The Name of the newly created Vnet |
 | vnet_location | The location of the newly created Vnet |
 | vnet_address_space | The address space of the newly created Vnet |
-
-DDOS Protection
-Azure DDoS Protection Standard, combined with application design best practices, provides enhanced DDoS mitigation features to defend against DDoS attacks. It is automatically tuned to help protect your specific Azure resources in a virtual network. Protection is simple to enable on any new or existing virtual network, and it requires no application or resource changes.
-
-* [DDOS](https://docs.microsoft.com/en-us/azure/ddos-protection/ddos-protection-overview)
 
 
 ## Related Projects
@@ -89,6 +87,12 @@ module "vnet" {
 }
 
 ```
+
+Tags
+----
+* Tags are assigned to resources with name variable as prefix.
+* Additial tags can be assigned by tags variables as defined above.
+
 
 ### Contributors
 |  [![Akanksha Srivastava][Akanksha_avatar]][akanksha.s_homepage]<br/>[Akanksha Sriastava][akanksha.s_homepage] |
