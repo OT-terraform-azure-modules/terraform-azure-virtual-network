@@ -8,20 +8,15 @@ Azure Virtual Network Terraform module
   [opstree_homepage]: https://opstree.github.io/
   [opstree_avatar]: https://img.cloudposse.com/150x150/https://github.com/opstree.png
 
-Terraform module which creates Vnet on Azure.
+* Terraform module which creates Vnet on Azure.
+* This version of vnet module contains DDOS Protection which can be enabled/disabled as per the requirement. 
+* To enable DDOS Protection Feature, 
+   create_ddos_protection_plan = true 
+* To disable DDOS Protection Feature,
+   create_ddos_protection_plan = false
+* Azure provides continuous protection against DDoS attacks. This DDoS protection service helps to protect all Azure services.
 
-DDOS Protection
----
-Azure provides continuous protection against DDoS attacks. DDoS protection does not store customer data. This DDoS protection service helps to protect all Azure services, including platform as a service (PaaS) services such as Azure DNS. DDoS Protection Basic requires no user configuration or application changes.
-In a DDoS attack, a perpetrator intentionally floods the system, like a server, website, or other network resource, with fake traffic. The computers are connected in a coordinated command-and-control network, called a botnet. A malicious third party controls the botnet to launch the DDoS attack. By overwhelming the service’s capabilities, the activity triggers a denial of services to legitimate users. DDoS attacks can be targeted at any endpoint that's publicly reachable through the internet.
-
-* [DDOS](https://docs.microsoft.com/en-us/azure/ddos-protection/ddos-protection-overview)
-
-
-These types of resources are supported:
-
-* [VNET](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network)
-
+ 
 Terraform versions
 ------------------
 Terraform 1.0
