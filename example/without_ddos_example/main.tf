@@ -13,7 +13,7 @@ provider "azurerm" {
 }
 
 module "res_group" {
-  source                  = "git::https://github.com/OT-terraform-azure-modules/terraform-azure-resource-group.git?ref=v0.0.1"
+  source                  = "git@github.com:OT-terraform-azure-modules/terraform-azure-resource-group.git"
   resource_group_name     = "test-rg"
   resource_group_location = "West Europe"
   lock_level_value        = ""
@@ -31,7 +31,7 @@ module "vnet" {
   # create_ddos_protection_plan = true    # Only use this variable when we want Ddos Protection enabled for our VNET. 
   dns_servers             = ["10.0.0.4", "10.0.0.5"]
   tag_map = {
-    Owner = "Akansha"
+    Owner = "Akanksha"
   }
 }
 
