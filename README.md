@@ -11,6 +11,7 @@ Azure Virtual Network Terraform module
 Terraform module which creates Vnet on Azure.
 
 DDOS Protection
+---
 Azure provides continuous protection against DDoS attacks. DDoS protection does not store customer data. This DDoS protection service helps to protect all Azure services, including platform as a service (PaaS) services such as Azure DNS. DDoS Protection Basic requires no user configuration or application changes.
 In a DDoS attack, a perpetrator intentionally floods the system, like a server, website, or other network resource, with fake traffic. The computers are connected in a coordinated command-and-control network, called a botnet. A malicious third party controls the botnet to launch the DDoS attack. By overwhelming the service’s capabilities, the activity triggers a denial of services to legitimate users. DDoS attacks can be targeted at any endpoint that's publicly reachable through the internet.
 
