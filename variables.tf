@@ -27,6 +27,7 @@ variable "create_ddos_protection_plan" {
 variable "dns_servers" {
   description = "(Optional) List of IP addresses of DNS servers"
   type        = list(string)
+  default     = []
 }
 
 variable "tag_map" {
